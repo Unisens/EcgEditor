@@ -12,7 +12,7 @@ public class TriggerTypes{
 	public TriggerTypes(){
 		try {
 			Properties properties = new Properties();
-			properties.loadFromXML(new FileInputStream(new File("triggers.xml")));
+			properties.loadFromXML(TriggerTypes.class.getClassLoader().getResourceAsStream("triggers.xml"));
 			for(Map.Entry<Object, Object> entry : properties.entrySet()){
 				triggerTypes.add(new TriggerType((String)entry.getKey(), (String)entry.getValue()));
 			}

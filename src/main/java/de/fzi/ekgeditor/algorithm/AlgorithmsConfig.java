@@ -17,6 +17,8 @@ import org.xml.sax.SAXException;
 
 import de.fzi.ekgeditor.algorithm.AlgorithmEntry.ContentClass;
 import de.fzi.ekgeditor.algorithm.AlgorithmEntry.EntryTypeEnum;
+import de.fzi.ekgeditor.data.Constants;
+import de.fzi.ekgeditor.data.ImageManager;
 
 
 public class AlgorithmsConfig {
@@ -45,7 +47,7 @@ public class AlgorithmsConfig {
 			//Using factory get an instance of document builder
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			//parse using builder to get DOM representation of the XML file
-			Document dom = db.parse(configFile);
+			Document dom = db.parse(AlgorithmsConfig.class.getClassLoader().getResourceAsStream(configFile));
 			Element docEle = dom.getDocumentElement();
 			
 			// find algorithm nodes

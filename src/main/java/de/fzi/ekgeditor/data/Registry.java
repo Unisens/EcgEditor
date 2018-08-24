@@ -8,14 +8,20 @@
 package de.fzi.ekgeditor.data;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Properties;
 
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
+
+import net.harawata.appdirs.AppDirs;
+import net.harawata.appdirs.AppDirsFactory;
+
 
 public class Registry {
 	
@@ -55,25 +61,45 @@ public class Registry {
 	/** Was the last read/write sucessfull? */
 	public Boolean StatusOK=false;
 	
+	private String userAppDataDir;
+	
+	private void getUserAppDataDiry()
+	{
+		AppDirs appDirs = AppDirsFactory.getInstance();
+		userAppDataDir = appDirs.getUserDataDir("EKGEditor", null, "FZI");
+	}
+	
 	/** Load all the settings from filesystem to memory 
 	 * @return true, if operation was sucessfull otherwise returns false
 	 * */
 	public Boolean load()
 	{
-		StatusOK=true;
+		StatusOK=false;
+		
 		reg = new Properties();
+		
+		//read default properties
+		try
+		{
+			reg.loadFromXML(Registry.class.getClassLoader().getResourceAsStream(file_registry));
+			StatusOK=true;
+		}
+		catch (Exception e)
+		{
+			System.err.println("Fehler beim Laden der default Konfigurationsdatei.\n");
+			System.err.println(e.getMessage());
+		}
+
 		FileInputStream regFile = null;
 		try
 		{
-			regFile=new FileInputStream(file_registry);
-			//reg.load(regFile);
+			regFile=new FileInputStream(userAppDataDir+File.separator+file_registry);
 			reg.loadFromXML(regFile);
 		}
 		catch (Exception e)
 		{
-			System.err.println("Fehler beim Laden der Konfigurationsdatei.\n");
+			System.err.println("Fehler beim Laden der USer-Konfigurationsdatei.\n");
 			System.err.println(e.getMessage());
-			StatusOK=false;
 		}
 		finally
 		{
@@ -85,11 +111,9 @@ public class Registry {
 				}
 				catch (IOException e)
 				{
-					StatusOK=false;
 				}
 			}
 		}
-		
 		return StatusOK;
 	}
 	
@@ -99,16 +123,20 @@ public class Registry {
 	 */
 	public Boolean save()
 	{
-		StatusOK=true;
+		StatusOK=false;
 		FileOutputStream out=null;
+
+		//create app data dir, if is does not exist
+		new File(userAppDataDir).mkdirs();
+		
 		try
 		{
-			out=new FileOutputStream(new File(file_registry));
+			out=new FileOutputStream(userAppDataDir+File.separator+file_registry);
 			reg.storeToXML(out,null);
+			StatusOK=true;
 		}
 		catch (Exception e)
 		{
-			StatusOK=false;
 			if (out!=null)
 			{
 				try
@@ -117,12 +145,12 @@ public class Registry {
 				}
 				catch (IOException ex)
 				{
-					StatusOK=false;
 				}
 			}
 		}
 		return StatusOK;
 	}
+	
 	
 	/** Convert-method to map (save) one color-object to registry (memory) settings 
 	 * @param c The color to be saved
@@ -197,6 +225,7 @@ public class Registry {
 
 		return result;
 	}
+
 	public void saveFontToRegistry(Font f,String RegistryKey)
 	{
 		FontData f2=f.getFontData()[0];
@@ -208,13 +237,12 @@ public class Registry {
 		reg.setProperty(RegKey, f2.getName());
 		RegKey=RegistryKey+FontStyle;
 		reg.setProperty(RegKey, Integer.toString(f2.getStyle()));
-		
-		
 	}
 	
 	/** Standard constructor for Registry (loads directly settings from filesystem to memory) */
 	public Registry()
 	{
+		getUserAppDataDiry();
 		StatusOK=load();
 		if (!StatusOK)
 		{

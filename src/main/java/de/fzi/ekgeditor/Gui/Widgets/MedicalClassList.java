@@ -19,6 +19,7 @@ import org.w3c.dom.NodeList;
 
 import de.fzi.ekgeditor.data.Constants;
 import de.fzi.ekgeditor.data.MedicalClass;
+import de.fzi.ekgeditor.data.Registry;
 
 public class MedicalClassList {
 	
@@ -41,7 +42,7 @@ public class MedicalClassList {
 		    	System.out.println("Laden der Konfigurationsdatei MedicalClasses.xml");
 		    	System.out.println("Datei:"+Constants.file_MedicalClassesConfig);
 		    }
-		    Document document = builder.parse( new File(Constants.file_MedicalClassesConfig) );
+		    Document document = builder.parse(Registry.class.getClassLoader().getResourceAsStream(Constants.file_MedicalClassesConfig));
 		    document.normalizeDocument();
 		    
 		    currentMedicalClass=null;

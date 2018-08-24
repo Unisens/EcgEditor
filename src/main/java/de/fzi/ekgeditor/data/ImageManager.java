@@ -90,7 +90,7 @@ public class ImageManager {
 		boolean result=true;
 		try
 		{
-			images.add(new ImageKVP(name, new Image(display,Constants.iconPath+name)));
+			images.add(new ImageKVP(name, new Image(display,ImageManager.class.getClassLoader().getResourceAsStream(Constants.iconPath+name))));
 		}
 		catch (IllegalArgumentException e)
 		{
