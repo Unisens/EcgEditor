@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="N">Normal beat</entry>
+<entry key="L">Left bundle branch block beat</entry>
+<entry key="R">Right bundle branch block beat</entry>
+<entry key="B">Bundle branch block beat (unspecified)</entry>
+<entry key="A">Atrial premature beat</entry>
+<entry key="a">Aberrated atrial premature beat</entry>
+<entry key="J">Nodal (junctional) premature beat</entry>
+<entry key="S">Supraventricular premature or ectopic beat (atrial or nodal)</entry>
+<entry key="V">Premature ventricular contraction</entry>
+<entry key="r">R-on-T premature ventricular contraction</entry>
+<entry key="F">Fusion of ventricular and normal beat</entry>
+<entry key="e">Atrial escape beatNormal beat</entry>
+<entry key=" ">Nodal (junctional) escape beat</entry>
+<entry key=" ">Supraventricular escape beat (atrial or nodal)</entry>
+<entry key="E">Ventricular escape beat</entry>
+<entry key="/">Paced beat</entry>
+<entry key=" ">Fusion of paced and normal beat</entry>
+<entry key="Q">Unclassifiable beat</entry>
+<entry key="?">Beat not classified during learning</entry>
+<entry key="[">Start of ventricular flutter/fibrillation</entry>
+<entry key="!">Ventricular flutter wave</entry>
+<entry key="]">End of ventricular flutter/fibrillation</entry>
+<entry key="x">Non-conducted P-wave (blocked APC)</entry>
+<entry key="(">Waveform onset</entry>
+<entry key="p">Peak of P-wave</entry>
+<entry key="t">Peak of T-wave</entry>
+<entry key="u">Peak of U-wave</entry>
+<entry key="`">PQ junction</entry>
+<entry key="'">J-point</entry>
+<entry key="^">(Non-captured) pacemaker artifact</entry>
+<entry key="|">Isolated QRS-like artifact</entry>
+<entry key="~">Change in signal quality</entry>
+<entry key="+">Rhythm change</entry>
+</properties>

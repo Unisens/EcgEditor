@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<MedicalClasses>
+	<entry>
+		<title>grobe VF</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>VF</abbreviation>
+	</entry>
+	<entry>
+		<title>schnelle VT</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>FVT</abbreviation>
+	</entry>
+	<entry>
+		<title>langsame VT</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>AIVR</abbreviation>
+	</entry>
+	<entry>
+		<title>Vorhofflimmern</title>
+		<minimalLength>300000</minimalLength>
+		<abbreviation>AFIB</abbreviation>
+	</entry>
+	<entry>
+		<title>Vorhofflattern</title>
+		<minimalLength>300000</minimalLength>
+		<abbreviation>AFLUT</abbreviation>
+	</entry>
+	<entry>
+		<title>Extrasystolie</title>
+		<minimalLength>300000</minimalLength>
+		<abbreviation>PVC</abbreviation>
+	</entry>
+	<entry>
+		<title>weitere Rhythmusstörungen</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>MISC</abbreviation>
+	</entry>
+	<entry>
+		<title>normaler Sinusryhthmus</title>
+		<minimalLength>300000</minimalLength>
+		<abbreviation>NSR</abbreviation>
+	</entry>
+	<entry>
+		<title>supraventrikuläre Tachykardie</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>SVT</abbreviation>
+	</entry>
+	<entry>
+		<title>Bradikardie/Asystolie</title>
+		<minimalLength>15000</minimalLength>
+		<abbreviation>BRDY</abbreviation>
+	</entry>
+ </MedicalClasses>

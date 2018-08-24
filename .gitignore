@@ -1,0 +1,11 @@
+#gradle
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+
+#eclipse
+.project
+.classpath
+.settings/
+bin
