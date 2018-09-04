@@ -9,3 +9,7 @@ gradle-app.setting
 .classpath
 .settings/
 bin
+
+#installer
+/installer/EcgEditor-cache/
+/installer/EcgEditor-SetupFiles/
