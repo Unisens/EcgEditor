@@ -1,26 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecgeditor>
-	<algorithm name="MuGuard" class="de.fzi.ekgdemonstrator.algorithms.AlgorithmJNI">
-		<input>
-			<signal name="EKG Daten" contentClass="ECG">
-				<configset samplerate="250" lsb="1" unit="uV" delay="339" />
-				<channel name="CH1" />
-				<channel name="CH2" />
-			</signal>
-			<signal name="ACC Daten" contentClass="ACC">
-				<configset samplerate="50" lsb="1" unit="uV" delay="339" />
-				<channel name="X" />
-				<channel name="Y" />
-				<channel name="Z" />
-			</signal>
-		</input>
-		<output>
-			<timerange name="Artifact"  /> 
-			<signal name="filtered ECG" contentClass="ECG" />
-			<event name="QRS" />
-			<heartrate name="Heartrate" />
-		</output>
-	</algorithm>
 	<algorithm name="OseaQrsDet" class="de.fzi.ekgeditor.algorithm.jni.OseaQrsDetAlgorithmJNI">
 		<input>
 			<signal name="EKG Daten" contentClass="ECG">
@@ -30,6 +9,7 @@
 				<configset samplerate="400" lsb="1" unit="uV" delay="200" />
 				<configset samplerate="500" lsb="1" unit="uV" delay="200" />
 				<configset samplerate="512" lsb="1" unit="uV" delay="200" />
+				<configset samplerate="1024" lsb="1" unit="uV" delay="200" />
 				<channel name="CH1" />
 			</signal>
 		</input>
@@ -38,6 +18,7 @@
 			<event name="QRS-Trigger" />
 		</output>
 	</algorithm>
+
 	<algorithm name="OseaQrsDet2" class="de.fzi.ekgeditor.algorithm.jni.OseaQrsDet2AlgorithmJNI">
 		<input>
 			<signal name="EKG Daten" contentClass="ECG">
@@ -47,6 +28,7 @@
 				<configset samplerate="400" lsb="1" unit="uV" delay="200" />
 				<configset samplerate="500" lsb="1" unit="uV" delay="200" />
 				<configset samplerate="512" lsb="1" unit="uV" delay="200" />
+				<configset samplerate="1024" lsb="1" unit="uV" delay="200" />
 				<channel name="CH1" />
 			</signal>
 		</input>
@@ -55,74 +37,4 @@
 			<event name="QRS-Trigger" />
 		</output>
 	</algorithm>
-	<algorithm name="OSEA-Java" class="de.fzi.ekgdemonstrator.algorithms.AlgorithmJNI">
-		<input>
-			<signal name="EKG Daten" contentClass="ECG">
-				<configset samplerate="250" lsb="1" unit="uV" delay="250" />
-				<channel name="Einthoven I" />
-				<channel name="Einthoven II" />
-			</signal>
-		</input>
-		<output>
-			<signal name="ECG" />
-			<event name="QRS" />
-			<event name="PVC" />
-			<event name="UNKNOWN" />
-		</output>
-	</algorithm>
-	<!--  
-	<algorithm name="VTVF" class="de.fzi.ekgdemonstrator.algorithms.AlgorithmJNI">
-		<input>
-			<signal name="EKG Daten" contentClass="ECG">
-				<configset samplerate="250" lsb="1" unit="uV" delay="0" />
-				<channel name="Einthoven II" />
-			</signal>
-		</input>
-		<output>
-			<numeric name="Detection result" />
-			<timerange name="VT/VF" />
-			<event name="Half-wave" />
-			<signal name="count1" />
-			<signal name="count2" />
-			<signal name="count3" />
-		</output>
-	</algorithm>	
-	<algorithm name="MovementClassification" class="de.fzi.ekgdemonstrator.algorithms.AlgorithmJNI">
-		<input>
-			<signal name="ACC-Daten" contentClass="ACC">
-				<configset samplerate="50" lsb="0.003" unit="g" delay="80"/>
-				<channel name="x"/>
-				<channel name="y"/>
-				<channel name="z"/>
-			</signal>
-		</input>
-		<output>
-			<numeric name="Movement class"/>
-			<signal name="Ax" contentClass="ACC"/>
-			<signal name="Ay" contentClass="ACC"/>
-			<signal name="Az" contentClass="ACC"/>
-		</output>
-	</algorithm>
-	<algorithm name="analysis_manager_java" class="de.fzi.ekgdemonstrator.algorithms.AlgorithmJNI">
-		<input>
-			<signal name="EKG Daten" contentClass="ECG">
-				<configset samplerate="250" lsb="1" unit="uV" delay="589" />
-				<channel name="Einthoven I" />
-				<channel name="Einthoven II" />
-			</signal>
-			<signal name="ACC Daten" contentClass="ACC">
-				<configset samplerate="50" lsb="1" unit="uV" delay="589" />
-				<channel name="X" />
-				<channel name="Y" />
-				<channel name="Z" />
-			</signal>
-		</input>
-		<output>
-			<signal name="ECG1" contentClass="ECG"/>
-			<event name="QRS" />
-			<numeric name="Channel" />
-			<timerange name="Artifact" />
-		</output>
-	</algorithm>
-	-->
 </ecgeditor>
