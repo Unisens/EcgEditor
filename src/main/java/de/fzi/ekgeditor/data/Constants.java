@@ -11,10 +11,10 @@ public class Constants
 {
 
 	/** Program name */
-	public static final String Programname = "EKG-Editor";
+	public static final String Programname = "EcgEditor";
 
 	/** current version of this program */
-	public static final String Programversion = "Version %VERSION%";
+	public static final String Programversion = "Version 1.0.0";
 
 	/**
 	 * Test of equality with floating-point variables is always not exact. This
@@ -45,7 +45,7 @@ public class Constants
 	public static final String undefined = "undefiniert";
 
 	/** Title of the about-box */
-	public static final String aboutTitle = "Über " + Programname;
+	public static final String aboutTitle = "ï¿½ber " + Programname;
 	
 	/** License information */
 	public static final String licenseInfo = "%LICENSE%"; 
@@ -64,11 +64,11 @@ public class Constants
 			+ "\t\tRadoslav Nedkov\n";
 
 	/** Message string of the aboutUnisens box */
-	public static final String unisensTitle = "Über Unisens";
+	public static final String unisensTitle = "ï¿½ber Unisens";
 	public static final String unisensInfo = 
 			  "UNISENS \n" 
-			+ "Unisens ist ein universelles Datenformat für\n"
-			+ "Multi-Sensor-Daten. Mehr Informationen über \n"
+			+ "Unisens ist ein universelles Datenformat fï¿½r\n"
+			+ "Multi-Sensor-Daten. Mehr Informationen ï¿½ber \n"
 			+ "Unisens erfahren Sie auf der Unisens-Homepage:\n"
 			+ "\n"
 			+ "http://www.unisens.org\n";
@@ -77,7 +77,7 @@ public class Constants
 	public static final String internError = "Interner Fehler. Bitte wenden Sie sich an den Hersteller.";
 
 	/** listbox_medicalClasses uses this (also for comparison) */
-	public static final String pleaseSelect = "- Signalklasse auswählen -";
+	public static final String pleaseSelect = "- Signalklasse auswï¿½hlen -";
 	
 	/** medical classes comment */
 	public static final String comment = "Kommentar";
