@@ -16,7 +16,7 @@ EcgEditor uses the OSEA qrs detector, which is licensed under LGPL
   + Installer available for Windows XP / 7 / 8 / 10
 
 ## Download
-You can download UnisensViewer [here](http://software.unisens.org/download/EcgEditor/EcgEditor_Setup.exe).
+You can download EcgEditor [here](http://software.unisens.org/download/EcgEditor/EcgEditor_Setup.exe).
   
 ## Screenshot
 ![EcgEditor Screenshot](http://unisens.org/pics/ecgeditor.png "EcgEditor Screenshot")
